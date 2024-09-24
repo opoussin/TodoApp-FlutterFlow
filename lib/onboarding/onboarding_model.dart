@@ -14,6 +14,10 @@ class OnboardingModel extends FlutterFlowModel<OnboardingWidget> {
   FocusNode? nameFocusNode;
   TextEditingController? nameTextController;
   String? Function(BuildContext, String?)? nameTextControllerValidator;
+  // State field(s) for Lastname widget.
+  FocusNode? lastnameFocusNode;
+  TextEditingController? lastnameTextController;
+  String? Function(BuildContext, String?)? lastnameTextControllerValidator;
   DateTime? datePicked;
 
   @override
@@ -23,5 +27,8 @@ class OnboardingModel extends FlutterFlowModel<OnboardingWidget> {
   void dispose() {
     nameFocusNode?.dispose();
     nameTextController?.dispose();
+
+    lastnameFocusNode?.dispose();
+    lastnameTextController?.dispose();
   }
 }
