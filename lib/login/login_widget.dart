@@ -778,6 +778,21 @@ class _LoginWidgetState extends State<LoginWidget>
 
                               context.goNamedAuth(
                                   'onboarding', context.mounted);
+
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(
+                                    'You received a Welcom Email, check it now',
+                                    style: TextStyle(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                    ),
+                                  ),
+                                  duration: const Duration(milliseconds: 4000),
+                                  backgroundColor:
+                                      FlutterFlowTheme.of(context).success,
+                                ),
+                              );
                             },
                             text: 'Sign up',
                             options: FFButtonOptions(

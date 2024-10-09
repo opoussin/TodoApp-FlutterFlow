@@ -96,7 +96,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'onboarding',
           path: '/onboarding',
-          builder: (context, params) => const OnboardingWidget(),
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'onboarding')
+              : const OnboardingWidget(),
         ),
         FFRoute(
           name: 'completed',
